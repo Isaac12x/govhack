@@ -1,59 +1,27 @@
 import React, { Component } from "react";
 import { ExpenseList, ExpenseForm, LoadingBar } from "./components/index";
 import { MDCSnackbar } from "@material/snackbar/dist/mdc.snackbar.js";
-import {Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import girl from './img.jpeg';
 import "@material/fab/dist/mdc.fab.css";
 import "@material/button/dist/mdc.button.css";
 import "@material/toolbar/dist/mdc.toolbar.css";
 import "@material/snackbar/dist/mdc.snackbar.css";
 import "@material/card/dist/mdc.card.css";
-import "@material/menu/dist/mdc.menu.css";
+
+import "./Expenses.css";
 
 
-import Avatar from 'material-ui/Avatar';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/Menu';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import Switch from 'material-ui/Switch';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
-import withRoot from './components/withRoot';
-import "./Koala.css";
 
-
-const styles = {
-  root: {
-    textAlign: 'center',
-    paddingTop: 200,
-  },
-};
-
-const style = {
-  marginLeft: 20,
-};
-
-const switchStyle = {
-};
-
-const avatarStyle = {
-  width: 200,
-  height: 200,
-};
-
-class Koala extends Component {
+class Expenses extends Component {
   constructor() {
     super();
 
     this.clientId =
-    //876732371818-p9amia1vae2o29eaa93nmsep88u1mqrk.apps.googleusercontent.com
       "826265862385-p41e559ccssujlfsf49ppmo0gktkf6co.apps.googleusercontent.com";
     this.spreadsheetId =
       process.env.REACT_APP_SHEET_ID ||
-      "133BsV86GObz2UJRukpp-2-c0rMvf5JiF0QSNhblKfxs";
+      "1ktQGqyXYufbe7Albsw6c5aQOdjfnICZ20sPIiJ8X9G0";
 
     this.state = {
       signedIn: undefined,
@@ -67,10 +35,9 @@ class Koala extends Component {
       showExpenseForm: false,
       totalSavings: "3000",
       totalDebt: "200",
-      menuPosition: 1,
+      totalIncome: "1000",
     };
 
-   this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -281,21 +248,15 @@ class Koala extends Component {
       });
   }
 
-  handleChange() {
-
-  }
-
-
   render() {
     return (
       <div>
         <header className="mdc-toolbar mdc-toolbar--fixed">
           <div className="mdc-toolbar__row">
             <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
-              <span className="mdc-toolbar__title "><Link to="/expenses"> Expenses </Link></span>
-              <span className="mdc-toolbar__title link-margin">Koala savings</span>
+              <span className="mdc-toolbar__title">Expenses</span>
+              <span className="mdc-toolbar__title link-margin"><Link to="/koala-accounts"> Koala accounts </Link></span>
             </section>
-
             <section
               className="mdc-toolbar__section mdc-toolbar__section--align-end"
               role="toolbar"
@@ -395,31 +356,18 @@ class Koala extends Component {
         <div>
           <div className="mdc-card">
             <section className="mdc-card__primary">
-              <div className="row">
-                <div className="mrg-lt img-responsive col-md-4 col-sm-4">
-                <Avatar src={girl} size={200} style={avatarStyle} ></Avatar>
-                </div>
-                <div className="col col-md-6 col-sm-6 pull-right mrg-lt mrg-top data">
-                <TextField defaultValue="Kafa Abadi" />
-                <TextField defaultValue="Son of Amena Molouff" />
-                <TextField defaultValue="Koala account" />
-                <TextField defaultValue="Opened on 21/12/2017" />
-                </div>
-              </div>
-            </section>
-          </div>
-          <div className="mdc-card">
-            <section className="mdc-card__primary">
-              <h1 className="mdc-card__title mdc-card__title--large center padding-tp">
+              <h2 className="mdc-card__subtitle">This month stats:</h2>
+              <h1 className="mdc-card__title mdc-card__title--large">
+                <span className="left-showcase">
+                  <span className="green"><sup><span className="big-number">${this.state.totalIncome}</span> in</sup></span>&frasl;<span className="red"><sub><span className="big-number-down">{this.state.currentMonth}</span> out</sub></span>
+                </span>
                 <span className="right-showcase">
-                  <span className="green"><sup><span className="big-number">$ {this.state.totalSavings}</span> saved</sup></span>
+                  <span className="green"><sup><span className="big-number">${this.state.totalSavings}</span> saved</sup></span>&frasl;<span className="red"><sub><span className="big-number-down">${this.state.totalDebt}</span> debt</sub></span>
                 </span>
               </h1>
             </section>
             <section className="mdc-card__supporting-text">
               Previous month: {this.state.previousMonth}
-
-              <span className="right margin-lt">able to withdraw <Switch label="" disabled={true} style={switchStyle} /> </span>
             </section>
           </div>
           <ExpenseList
@@ -438,5 +386,4 @@ class Koala extends Component {
   }
 }
 
-
-export default withRoot(withStyles(styles)(Koala));
+export default Expenses;

@@ -71,11 +71,18 @@ a.material-icons {
 }
 
 .left-showcase {
-  margin-left: 20%;
+  margin-left: 7%;
   margin-right: 7%;
 }
 .right-showcase {
 
+}
+.link-margin {
+  margin-left: 2%;
+  text-decoration: none;
+}
+.link-margin:hover {
+  text-decoration: none;
 }
 
 .big-number {
