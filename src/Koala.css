@@ -1,0 +1,128 @@
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+header.mdc-toolbar {
+  background-color: #50d29d;
+}
+button.mdc-toolbar__icon {
+  display: inline-block;
+  color: white;
+}
+.toolbar-adjusted-content {
+  margin-top: 70px;
+}
+.mdc-card {
+  margin: 0.5em;
+  background: white;
+}
+.mdc-card__title {
+  margin: 0.5em 0;
+  font-size: 200%;
+  color: #20b1d6;
+}
+
+.top-space {
+  margin-top: 25%;
+}
+
+.mdc-card__supporting-text {
+  color: #7a7a7a;
+}
+.mdc-card__supporting-text:last-child {
+  padding-bottom: 8px;
+}
+.center {
+  text-align: center;
+}
+button.sign-in {
+  margin: 2em auto;
+}
+a.material-icons {
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .app-fab--absolute {
+    bottom: 3rem;
+    right: 5rem;
+  }
+}
+
+.green {
+  color: green;
+  font-size: 1.2rem;
+  padding-right:5px
+}
+
+.red {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.savings {
+  color: green;
+}
+
+.debt sub {
+  color: red;
+}
+
+.left-showcase {
+  margin-left: 20%;
+  margin-right: 7%;
+}
+.right-showcase {
+
+}
+
+.big-number {
+  font-size: 2.9rem;
+}
+.padding-tp {
+  padding-top: 6%;
+}
+
+.margin-lt {
+  margin-left: 40%;
+}
+
+.big-number-down {
+  font-size: 2.3rem;
+  padding-left: 5px;
+}
+
+.mdc-card__subtitle {
+  padding-bottom: 5%;
+}
+
+.mdc-card__supporting-text{
+  padding-top: 5%;
+}
+
+.mrg-lt {
+  margin-left: 4%;
+}
+
+.mrg-top {
+  margin-top: 6%;
+}
+
+.MuiAvatar-root-6{
+  height: 200px;
+  width: 200px;
+}
+
+.MuiPaper-root-9 {
+  width: 45%;
+}
+
+.data > input {
+  width: 100%;
+}
+
+.MuiFormControl-root-9, .MuiFormControl-root-9 > input {
+  width:100;
+}

@@ -1,0 +1,7 @@
+1. Create/build the models to hold a parent account and multiple koala's
+2. Create the methods to handle card payment
+3. Unify the accounts under a same db
+4. Every time you open an account, a blockchain wallet is created
+5. Test Bancor interaction and bank interaction with the contract
+6. Integrity test
+7. Deploy
